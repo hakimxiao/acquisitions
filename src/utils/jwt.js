@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const JWT_SECRET =
   process.env.JWT_SECRET || 'your-secret-key-please-change-in-production';
-const JWT_EXPIRES_IN = 'id';
+const JWT_EXPIRES_IN = '1d';
 
 export const jwttoken = {
   sign: payload => {

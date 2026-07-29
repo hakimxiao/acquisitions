@@ -5,7 +5,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 
-import authRoutes from '#routes/auth.route.js';
+import authRoutes from '#routes/auth.routes.js';
 
 const app = express();
 
@@ -38,7 +38,7 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.status(200).json({ message: 'Aquisitions API is running' });
+  res.status(200).json({ message: 'Aquisitions API is running!' });
 });
 
 app.use('/api/auth', authRoutes);
