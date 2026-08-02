@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   # Neon Local proxy for development
-  neon_local:
+  neon-local:
     image: neondatabase/neon_local:latest
     container_name: acquisitions-neon-local
     ports:
@@ -31,7 +31,9 @@ services:
       target: development
     container_name: acquisitions-app-dev
     ports:
-       - .env.development
+       - "${PORT:-3000}:3000"
+    env_file:
+      - .env.development
     volumes:
       # Mount source code for development hot-reload
       - .:/app
